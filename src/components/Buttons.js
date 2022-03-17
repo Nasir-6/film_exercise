@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Buttons = () => {
+const Buttons = ({handleNextButtonClick}) => {
   return (
-    <button>Button</button>
+      <>
+      <button onClick={handleNextButtonClick}>Next</button>
+    <button onClick={handleNextButtonClick}>Previous</button>
+      </>
+    
   )
 }
 

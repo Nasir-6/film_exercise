@@ -4,6 +4,9 @@ import Film from '../components/Film'
 
 // The container will contain all the logics e.g all button click functions defined here and passed down as props
 
+
+
+
 const FilmContainer = () => {
 
     // Create a state for holding all films
@@ -71,12 +74,26 @@ const FilmContainer = () => {
     )
 
 
+    // Create a state for keeping track of current index
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Want buttons to increment/decrement currentIndex -
+    // Do button click logics here - but pass into Buttons component as props
+    
+    const incrementCurrentIndex = () => {
+        console.log('Clicked button');
+    }
+
+
+
+
+
 
   return (
     <>
     <h1>Data Base of Movies on the Internet</h1>
-    <Buttons/>
-    <Film film={allFilms[0]} />
+    <Buttons handleNextButtonClick={incrementCurrentIndex}/>
+    <Film film={allFilms[currentIndex]} />
     </>
   )
 }
