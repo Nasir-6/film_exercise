@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const Buttons = ({handleNextButtonClick}) => {
+const Buttons = ({ handleNextButtonClick, handlePreviousButtonClick }) => {
   return (
-      <>
+    <>
       <button onClick={handleNextButtonClick}>Next</button>
-    <button onClick={handleNextButtonClick}>Previous</button>
-      </>
-    
-  )
-}
+      <button onClick={handlePreviousButtonClick}>Previous</button>
+    </>
+  );
+};
 
 export default Buttons;

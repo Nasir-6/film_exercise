@@ -81,7 +81,15 @@ const FilmContainer = () => {
     // Do button click logics here - but pass into Buttons component as props
     
     const incrementCurrentIndex = () => {
-        console.log('Clicked button');
+        if(currentIndex < allFilms.length - 1){
+            setCurrentIndex(currentIndex + 1);
+        }
+    }
+
+    const decrementCurrentIndex = () => {
+        if(currentIndex > 0){
+            setCurrentIndex(currentIndex - 1);
+        }
     }
 
 
@@ -92,7 +100,7 @@ const FilmContainer = () => {
   return (
     <>
     <h1>Data Base of Movies on the Internet</h1>
-    <Buttons handleNextButtonClick={incrementCurrentIndex}/>
+    <Buttons handleNextButtonClick={incrementCurrentIndex} handlePreviousButtonClick={decrementCurrentIndex}/>
     <Film film={allFilms[currentIndex]} />
     </>
   )
