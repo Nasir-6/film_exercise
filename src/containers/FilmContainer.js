@@ -88,20 +88,27 @@ const FilmContainer = () => {
 
     const decrementCurrentIndex = () => {
         if(currentIndex > 0){
-            setCurrentIndex(currentIndex - 1);
+            setCurrentIndex(currentIndex - 1);            
         }
     }
 
-
-
+    //Create form submission handler
+    const setCurrentFilmIndex = (event) => {
+        event.preventDefault();        
+        setCurrentIndex(event.target["film-selector"].value - 1)
+    }
 
 
 
   return (
     <>
     <h1>Data Base of Movies on the Internet</h1>
-    <Buttons handleNextButtonClick={incrementCurrentIndex} handlePreviousButtonClick={decrementCurrentIndex}/>
     <Film film={allFilms[currentIndex]} />
+    <Buttons 
+        handleNextButtonClick={incrementCurrentIndex} 
+        handlePreviousButtonClick={decrementCurrentIndex}
+        handleSubmitButton={setCurrentFilmIndex} 
+        maxFilmIndex={allFilms.length}/>
     </>
   )
 }
