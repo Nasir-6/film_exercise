@@ -79,7 +79,30 @@ const FilmContainer = () => {
 
 
     // Create a state for keeping track of current index
-    const [currentIndex, setCurrentIndex] = useState(0);
+    // const [currentIndex, setCurrentIndex] = useState(0);
+    const storedIndexAsNumber = Number(localStorage.getItem("currentIndex"));
+    const [currentIndex, setCurrentIndex] = useState(
+      Number.isInteger(storedIndexAsNumber) ? storedIndexAsNumber : 0
+    );
+
+    // use localStorage to persist state!!
+    // Store currentIndex when it changes
+    useEffect(() => {
+        localStorage.setItem('currentIndex', currentIndex);
+      }, [currentIndex]);
+
+    // get currentIndex from localstorage after mounting 
+    // useEffect(() => {
+    //   const indexInLocalStorage = localStorage.getItem("currentIndex");
+    //   console.log("this is from local storage");
+    //   console.log(typeof indexInLocalStorage);
+    //   if (indexInLocalStorage) {
+    //     setCurrentIndex(indexInLocalStorage);
+    //   }
+    // }, []);
+
+
+
 
     // Want buttons to increment/decrement currentIndex -
     // Do button click logics here - but pass into Buttons component as props
