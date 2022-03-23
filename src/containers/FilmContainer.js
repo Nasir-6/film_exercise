@@ -80,7 +80,7 @@ const FilmContainer = () => {
 
     // Create a state for keeping track of current index
     // const [currentIndex, setCurrentIndex] = useState(0);
-    const storedIndexAsNumber = Number(localStorage.getItem("currentIndex"));
+    const storedIndexAsNumber = Number(sessionStorage.getItem("currentIndex"));
     const [currentIndex, setCurrentIndex] = useState(
       Number.isInteger(storedIndexAsNumber) ? storedIndexAsNumber : 0
     );
@@ -88,7 +88,7 @@ const FilmContainer = () => {
     // use localStorage to persist state!!
     // Store currentIndex when it changes
     useEffect(() => {
-        localStorage.setItem('currentIndex', currentIndex);
+        sessionStorage.setItem('currentIndex', currentIndex);
       }, [currentIndex]);
 
     // get currentIndex from localstorage after mounting 
