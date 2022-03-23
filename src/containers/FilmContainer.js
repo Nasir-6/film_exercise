@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Buttons from '../components/Buttons'
 import Film from '../components/Film'
 
@@ -8,6 +8,10 @@ import Film from '../components/Film'
 
 
 const FilmContainer = () => {
+
+    const myFunction = () => {console.log("My function ran")}
+
+    useEffect(myFunction)
 
     // Create a state for holding all films
     const [allFilms, setAllFilms] = useState(

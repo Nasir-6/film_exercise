@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 const Buttons = ({
   handleNextButtonClick,
@@ -9,8 +9,8 @@ const Buttons = ({
   return (
     <>
       <div className="button-container">
-        <button onClick={handleNextButtonClick}>Next</button>
         <button onClick={handlePreviousButtonClick}>Previous</button>
+        <button onClick={handleNextButtonClick}>Next</button>
       </div>
 
       <form onSubmit={handleSubmitButton}>
